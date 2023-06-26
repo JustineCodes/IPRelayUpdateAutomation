@@ -34,8 +34,8 @@ The VBScript was adapted from [How to import a list of IP addresses into a Micro
 
 ## How to Use
 
-1. Run the PowerShell script with parameters IpAddress, SubnetMask, and AddOrRemove
-example
+1. Run the PowerShell script with parameters example
+
 ```powershell
 .\ProvisionAndDeprovisionSMTP.ps1 -IpAddress "192.100.10.5" -SubnetMask "255.255.255.255" -AddOrRemove Add
 ```
