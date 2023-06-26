@@ -40,10 +40,9 @@ example
 .\ProvisionAndDeprovisionSMTP.ps1 -IpAddress "192.100.10.5" -SubnetMask "255.255.255.255" -AddOrRemove Add
 ```
 2. The PowerShell script will create the IP.txt file, copy it to each server, and start the task on the server
-3. The task will import the IP.txt file, and update the SMTP relay server list
+3. The task starts script importRelayList-Update.vbs that imports the updated IP.txt file, and replaces the existing allowed IP relay list.
 
 ## Requirements
 
 - PowerShell v3 or higher
-- Windows Server 2008 R2 or higher
-- Microsoft .NET Framework 4.5 or higher
+
