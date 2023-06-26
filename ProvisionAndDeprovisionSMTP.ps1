@@ -26,13 +26,13 @@ param(
 # $AddOrremove = "Remove"
 
     $Date = Get-date -Format yyyy-MM-dd_HH-mm
-    Start-transcript -Path "C:\Coding\IPRelayUpdateAutomation\transcript\$Date-Update-SmtpServerRelay.log" -NoClobber
+    Start-transcript -Path "Update\to\your\transcript\path\$Date-Update-SmtpServerRelay.log" -NoClobber
 
 <#
     Add your smtp relay server here
 #>
 
-
+## --> Update next line with a valid path
     $IpTextFile = "Path to ip.txt file"
 
     try{
@@ -164,16 +164,17 @@ param(
     Update each server
 #>
 
-    $Servers = "Commad seperated list of servers"
+## --> Update next line with comma seperated list of servers
+    $Servers = "Server1","Server2","Server3"
 
     Foreach($Server in $Servers){
 
         try{
 
-        Copy-Item -Path $IpTextFile -Destination "\\$Server\IPUpdateKit"
+        Copy-Item -Path $IpTextFile -Destination "\\$Server\Path\to\ip.txt\file"
         Start-Sleep -Seconds 4
 
-        Invoke-Command -ComputerName $Server -ScriptBlock {Start-ScheduledTask -TaskPath \automation\ -TaskName UpdateSMTPRelay}
+        Invoke-Command -ComputerName $Server -ScriptBlock {Start-ScheduledTask -TaskPath \pathName\ -TaskName UpdateSMTPRelay}
 
     }catch{
         $emailInfo = @{
