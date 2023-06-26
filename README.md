@@ -37,7 +37,7 @@ The VBScript was adapted from [How to import a list of IP addresses into a Micro
 1. Run the PowerShell script with parameters IpAddress, SubnetMask, and AddOrRemove
 example
 ```powershell
-.\ProvisionAndDeprovisionSMTP.ps1 -IpAddress 192.100.10.5 -SubnetMask 255.255.255.255 -AddOrRemove Add
+.\ProvisionAndDeprovisionSMTP.ps1 -IpAddress "192.100.10.5" -SubnetMask "255.255.255.255" -AddOrRemove Add
 ```
 2. The PowerShell script will create the IP.txt file, copy it to each server, and start the task on the server
 3. The task will import the IP.txt file, and update the SMTP relay server list
